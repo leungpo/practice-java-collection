@@ -13,17 +13,23 @@ public class StreamMap {
             "v", "w", "x", "y", "z");
 
     public List<Integer> getTriple(List<Integer> numbers) {
-        List<Integer> tripleNumbers = numbers.stream().map(number -> number * 3).collect(Collectors.toList());
+        List<Integer> tripleNumbers = numbers.stream()
+                .map(number -> number * 3)
+                .collect(Collectors.toList());
         return tripleNumbers;
     }
 
     public List<String> mapLetter(List<Integer> numbers) {
 
-        return numbers.stream().map(number -> ALPHABET.get(number - 1)).collect(Collectors.toList());
+        return numbers.stream()
+                            .map(number -> ALPHABET.get(number - 1))
+                            .collect(Collectors.toList());
     }
 
     public List<Integer> mapLength(List<String> words) {
 
-        return words.stream().map(word -> word.length()).collect(Collectors.toList());
+        return words.stream()
+                        .map(word -> word.length())
+                        .collect(Collectors.toList());
     }
 }
